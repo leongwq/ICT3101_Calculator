@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ICT3101_Calculator\ICT3101_Calculator.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\AddNumber.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorDivisions.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorAvailability.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Features\UsingCalculatorAvailability.feature.cs">
+      <DependentUpon>UsingCalculatorAvailability.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
